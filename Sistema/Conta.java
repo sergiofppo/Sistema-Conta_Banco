@@ -52,14 +52,14 @@ public class Conta {
 
     public void depositar(float valor) {
         if (statusConta) {
-            if (saldoConta >= 0 && tipoConta == "cp" || tipoConta == "cc") {
+            if (tipoConta.equals("cp") || tipoConta.equals("cc")) {
                 this.saldoConta += valor;
-                System.out.println("Deposito de R$"+valor+" foi efetuado na conta de: "+nomeDono);
+                System.out.println("Depósito de R$" + valor + " foi efetuado na conta de: " + nomeDono);
             } else {
-                System.out.println("Saldo da Conta insuficiente!");
+                System.out.println("Tipo de conta inválido para depósito!");
             }
         } else {
-            System.out.println("Voce nao tem uma conta aberta!");
+            System.out.println("Você não tem uma conta aberta!");
         }
     }
 
